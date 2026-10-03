@@ -163,6 +163,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
+            if (
+                target.classList.contains("destination-card") &&
+                window.getComputedStyle(target).display === "none"
+            ) {
+                document
+                    .querySelector(
+                        ".destinations .filter-btn[data-filter='all']"
+                    )
+                    ?.click();
+            }
+
             const headerHeight =
                 header
                     ? header.offsetHeight
